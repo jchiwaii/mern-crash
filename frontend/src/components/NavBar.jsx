@@ -5,6 +5,7 @@ import { Text, Button } from "@chakra-ui/react";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 import { useColorMode } from "@chakra-ui/react";
 import { IoIosMoon, IoIosSunny } from "react-icons/io";
+import { useProductStore } from "../store/product";
 
 const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -16,7 +17,7 @@ const NavBar = () => {
           h={"16"}
           alignItems={"center"}
           justifyContent={"space-between"}
-          flexDirection={{ // Fixed: use flexDirection instead of flexDir
+          flexDirection={{
             base: "column",
             sm: "row",
           }}
