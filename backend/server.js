@@ -9,12 +9,13 @@ import products from "./routes/Product.js";
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
 app.use("/api/products", products);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   connectDB();
-  console.log("Server is running on http://localhost:3000");
+  console.log("Server is running on http://localhost:" + PORT);
 });
