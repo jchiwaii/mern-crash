@@ -1,0 +1,280 @@
+# ==============================================
+# MERN STACK PROJECT .GITIGNORE
+# ==============================================
+
+# ==================
+# ENVIRONMENT & SECRETS
+# ==================
+# Environment variables (contains sensitive data)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Configuration files that may contain secrets
+config.json
+secrets.json
+
+# ==================
+# NODE.JS & NPM
+# ==================
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# NPM package lock files (choose one approach)
+# package-lock.json  # Uncomment if using Yarn exclusively
+# yarn.lock          # Uncomment if using NPM exclusively
+
+# NPM cache
+.npm
+.yarn-integrity
+
+# Optional npm cache directory
+.npm-cache/
+
+# ==================
+# RUNTIME & LOGS
+# ==================
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ==================
+# COVERAGE & TESTING
+# ==================
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# NYC test coverage
+.nyc_output
+
+# Jest
+coverage/
+.jest/
+
+# ==================
+# BUILD OUTPUTS
+# ==================
+# Build directories
+build/
+dist/
+out/
+
+# Production build
+/frontend/build
+/frontend/dist
+
+# Webpack bundle analyzer
+bundle-analyzer-report.html
+
+# ==================
+# REACT & FRONTEND
+# ==================
+# React build output
+/frontend/build
+/frontend/.next
+
+# React development
+.react/
+
+# Storybook build outputs
+storybook-static
+
+# ==================
+# DEVELOPMENT TOOLS
+# ==================
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Vim
+*.swp
+*.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ==================
+# OPERATING SYSTEMS
+# ==================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==================
+# DATABASES
+# ==================
+# MongoDB
+*.db
+mongodb.log
+
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+
+# ==================
+# UPLOADS & MEDIA
+# ==================
+# User uploaded files
+uploads/
+public/uploads/
+temp/
+tmp/
+
+# Generated images
+generated-images/
+
+# ==================
+# CACHE & TEMPORARY
+# ==================
+# Cache files
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+
+# Temporary folders
+tmp/
+temp/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ==================
+# SECURITY & CERTIFICATES
+# ==================
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.csr
+
+# ==================
+# DOCKER
+# ==================
+# Docker
+.dockerignore
+Dockerfile.prod
+
+# ==================
+# MISC
+# ==================
+# ESLint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Storybook
+.out
+.storybook-out
+
+# Temporary directories
+.tmp/
+.temp/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
