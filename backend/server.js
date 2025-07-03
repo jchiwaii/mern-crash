@@ -1,15 +1,18 @@
 import express from "express";
 import dotenv from "dotenv";
-import { connect } from "mongoose";
+import { connect, mongo } from "mongoose";
 import { connectDB } from "./config/db.js";
+import Product from "./models/Product.js";
+import mongoose from "mongoose";
+import products from "./routes/Product.js";
 
 dotenv.config();
 
 const app = express();
 
-app.get("/products", (req, res) => {
-  res.send(data.products);
-});
+app.use(express.json()); // Middleware to parse JSON bodies
+
+app.use("/api/products", products);
 
 app.listen(3000, () => {
   connectDB();
