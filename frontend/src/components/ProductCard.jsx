@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, VStack, HStack, Text, Image, IconButton } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 
 const ProductCard = ({ product, onEdit, onDelete }) => {
@@ -14,33 +13,27 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
       width="100%"
     >
       <VStack spacing={3}>
-        {/* Product Image - Clickable to view details */}
-        <Link to={`/product/${product._id}`}>
-          <Image
-            src={product.image}
-            alt={product.name}
-            width="100%"
-            height="300px"
-            objectFit="cover"
-            borderRadius="md"
-            cursor="pointer"
-            _hover={{ opacity: 0.8 }}
-          />
-        </Link>
+        {/* Product Image - No longer clickable */}
+        <Image
+          src={product.image}
+          alt={product.name}
+          width="100%"
+          height="300px"
+          objectFit="cover"
+          borderRadius="md"
+        />
 
-        {/* Product Info - Also clickable */}
-        <Link to={`/product/${product._id}`} style={{ textDecoration: "none" }}>
-          <VStack spacing={1} cursor="pointer">
-            <Text fontSize="xl" fontWeight="bold" textAlign="center">
-              {product.name}
-            </Text>
-            <Text color="gray.600" fontSize="lg">
-              ${product.price}
-            </Text>
-          </VStack>
-        </Link>
+        {/* Product Info - No longer clickable */}
+        <VStack spacing={1}>
+          <Text fontSize="xl" fontWeight="bold" textAlign="center">
+            {product.name}
+          </Text>
+          <Text color="gray.600" fontSize="lg">
+            ${product.price}
+          </Text>
+        </VStack>
 
-        {/* Action Buttons - Separate from Link */}
+        {/* Action Buttons */}
         <HStack spacing={2}>
           <IconButton
             icon={<EditIcon />}
