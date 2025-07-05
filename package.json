@@ -1,12 +1,13 @@
 {
   "name": "mern-crash",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "backend/server.js",
   "scripts": {
     "dev": "npm install && npm install --prefix frontend && npm run build --prefix frontend && NODE_ENV=development nodemon backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install --prefix frontend && npm run build --prefix frontend",
     "start": "NODE_ENV=production node backend/server.js",
+    "postinstall": "npm install --prefix frontend && npm run build --prefix frontend",
     "frontend": "npm run dev --prefix frontend",
     "backend": "NODE_ENV=development nodemon backend/server.js"
   },
@@ -22,5 +23,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
