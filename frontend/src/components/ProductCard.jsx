@@ -19,8 +19,8 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
           <Image
             src={product.image}
             alt={product.name}
-            maxW="200px"
-            h="200px"
+            width="100%"
+            height="300px"
             objectFit="cover"
             borderRadius="md"
             cursor="pointer"
