@@ -144,3 +144,5 @@ If you encounter issues with deployment:
 - **Frontend**: React, Chakra UI, Vite, Zustand
 - **Backend**: Node.js, Express.js, MongoDB, Mongoose
 - **Deployment**: Render (or any Node.js hosting platform)
+
+...
