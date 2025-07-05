@@ -90,4 +90,61 @@ export const useProductStore = create((set) => ({
       return { success: false, message: "Network error occurred" };
     }
   },
+  updateProduct: async (pid, updatedProduct) => {
+    const name = updatedProduct.name?.trim();
+    const price = updatedProduct.price?.toString().trim();
+    const image = updatedProduct.image?.trim();
+
+    if (!name || !price || !image) {
+      return {
+        success: false,
+        message: `All fields are required. Missing: ${!name ? "name " : ""},${
+          !price ? "price " : ""
+        },${!image ? "image" : ""}`,
+      };
+    }
+
+    // Validate price is a number
+    if (isNaN(parseFloat(price)) || parseFloat(price) <= 0) {
+      return {
+        success: false,
+        message: "Price must be a valid positive number",
+      };
+    }
+
+    try {
+      const productData = {
+        name: name,
+        price: parseFloat(price),
+        image: image,
+      };
+
+      const res = await fetch(`/api/products/${pid}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(productData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        return {
+          success: false,
+          message: data.message || "Something went wrong",
+        };
+      }
+
+      set((state) => ({
+        products: state.products.map((product) =>
+          product._id === pid ? data.data : product
+        ),
+      }));
+      return { success: true, message: "Product updated successfully" };
+    } catch (error) {
+      console.error("Network error:", error);
+      return { success: false, message: "Network error occurred" };
+    }
+  },
 }));
