@@ -5,16 +5,17 @@
   "scripts": {
     "dev": "npm install && npm install --prefix frontend && npm run build --prefix frontend && NODE_ENV=development nodemon backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "NODE_ENV=production node backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node backend/server.js",
     "postinstall": "npm install --prefix frontend && npm run build --prefix frontend",
     "frontend": "npm run dev --prefix frontend",
-    "backend": "NODE_ENV=development nodemon backend/server.js"
+    "backend": "NODE_ENV=development nodemon backend/server.js",
+    "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend"
   },
   "type": "module",
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "MERN stack application with product management",
   "dependencies": {
     "cross-env": "^7.0.3",
     "dotenv": "^17.0.1",
@@ -25,6 +26,7 @@
     "nodemon": "^3.1.10"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

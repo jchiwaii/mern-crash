@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mern-crash
+    env: node
+    plan: free
+    buildCommand: npm install && npm install --prefix frontend && npm run build --prefix frontend
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        fromDatabase:
+          name: mongodb
+          property: connectionString
+    healthCheckPath: /
